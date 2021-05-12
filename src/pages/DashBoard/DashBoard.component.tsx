@@ -1,3 +1,9 @@
-const Dashboard = (): JSX.Element => <>dashboard</>
+import { PortfolioPrices } from 'components/PortfolioPrices'
+
+const Dashboard = (): JSX.Element => (
+  <>
+    <PortfolioPrices />
+  </>
+)
 
 export default Dashboard
