@@ -7,7 +7,7 @@ const Header = (): JSX.Element => {
       <Flex
         flexWrap="nowrap"
         flexDirection={['row']}
-        justifyContent="space-between"
+        justifyContent={{ sm: 'center', md: 'space-between' }}
         alignItems="center"
         padding={['15px 20px', '15px 30px 15px 30px']}
         maxWidth={1480}
