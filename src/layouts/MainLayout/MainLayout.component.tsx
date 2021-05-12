@@ -1,10 +1,11 @@
 import { Switch, Route, Redirect } from 'react-router-dom'
 import { Dashboard } from 'pages/Dashboard'
 import { Portfolio } from 'pages/Portfolio'
+import { Header } from 'components/Header'
 
 const MainLayout = (): JSX.Element => (
   <>
-    <header>header</header>
+    <Header />
     <main>
       <Switch>
         <Route path="/dashboard">
