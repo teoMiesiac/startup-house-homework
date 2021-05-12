@@ -1,4 +1,4 @@
-import { Box, Text, SimpleGrid } from '@chakra-ui/react'
+import { Box, Text, SimpleGrid, Divider } from '@chakra-ui/react'
 import { Section } from 'components/Section'
 import { PortfolioPrice } from 'components/PortfolioPrice'
 
@@ -26,6 +26,7 @@ const examples = [
 const PortfolioPrices = (): JSX.Element => (
   <Section>
     <Box
+      position="relative"
       px={{ sm: '15px', md: '30px' }}
       py={{ sm: '20px', md: '30px', lg: '50px' }}
       my={{ sm: '20px', md: '50px', lg: '100px' }}
@@ -40,6 +41,7 @@ const PortfolioPrices = (): JSX.Element => (
       <Text color="teal" marginTop="40px">
         Default tickers are displayed.If you want to see custom ones, please add stocks in your portfolio
       </Text>
+      <Divider colorScheme="teal" margin="40px 0px" />
     </Box>
   </Section>
 )
