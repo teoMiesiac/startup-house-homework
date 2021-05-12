@@ -1,1 +1,1 @@
-export { default as DashBoard } from "./DashBoard.component";
+export { default as DashBoard } from './DashBoard.component'

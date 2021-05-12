@@ -1,5 +1,5 @@
-import React from "react";
+import React from 'react'
 
-const Portfolio = (): JSX.Element => <></>;
+const Portfolio = (): JSX.Element => <></>
 
-export default Portfolio;
+export default Portfolio
