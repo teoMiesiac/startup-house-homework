@@ -1,5 +1,3 @@
-import React from 'react'
+const Dashboard = (): JSX.Element => <>dashboard</>
 
-const DashBoard = (): JSX.Element => <></>
-
-export default DashBoard
+export default Dashboard
