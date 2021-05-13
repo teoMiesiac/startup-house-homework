@@ -1,1 +1,3 @@
-export {}
+export const NEWS_FETCH = 'NEWS/FETCH'
+export const NEWS_FETCH_SUCCESS = 'NEWS/FETCH_SUCCESS'
+export const NEWS_FETCH_ERROR = 'NEWS/FETCH_ERROR'

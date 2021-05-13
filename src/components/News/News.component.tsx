@@ -1,6 +1,9 @@
+import { useEffect } from 'react'
+import { useDispatch } from 'react-redux'
 import { Flex, SimpleGrid } from '@chakra-ui/react'
 import { Section } from 'components/Section'
 import { NewsArticle } from 'components/NewsArticle'
+import { newsFetch } from 'store/actions'
 
 const examples = [
   {
@@ -26,31 +29,39 @@ const examples = [
   },
 ]
 
-const News = (): JSX.Element => (
-  <Section>
-    <Flex
-      flexDirection="column"
-      flexWrap="nowrap"
-      px={{ sm: '15px', md: '30px' }}
-      py={{ sm: '20px', md: '30px', lg: '50px' }}
-      maxWidth={1480}
-      width="100%"
-      justifyContent={{ sm: '', md: 'space-between' }}
-      alignItems="center"
-    >
-      <SimpleGrid columns={1} spacing="10">
-        {examples.map((example) => (
-          <NewsArticle
-            key={example.id}
-            header={example.header}
-            text={example.text}
-            img={example.img}
-            link={example.link}
-          />
-        ))}
-      </SimpleGrid>
-    </Flex>
-  </Section>
-)
+const News = (): JSX.Element => {
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    dispatch(newsFetch())
+  }, [])
+
+  return (
+    <Section>
+      <Flex
+        flexDirection="column"
+        flexWrap="nowrap"
+        px={{ sm: '15px', md: '30px' }}
+        py={{ sm: '20px', md: '30px', lg: '50px' }}
+        maxWidth={1480}
+        width="100%"
+        justifyContent={{ sm: '', md: 'space-between' }}
+        alignItems="center"
+      >
+        <SimpleGrid columns={1} spacing="10">
+          {examples.map((example) => (
+            <NewsArticle
+              key={example.id}
+              header={example.header}
+              text={example.text}
+              img={example.img}
+              link={example.link}
+            />
+          ))}
+        </SimpleGrid>
+      </Flex>
+    </Section>
+  )
+}
 
 export default News

@@ -1,1 +1,1 @@
-export {}
+export const STOCKS_FETCH = 'STOCKS/FETCH'
