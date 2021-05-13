@@ -45,7 +45,7 @@ const NewsArticle = ({ header, text, img, link }: Props): JSX.Element => (
       borderColor="teal"
       padding="10px"
       borderRadius="5px"
-      marginTop={{ sm: '10px', md: '0' }}
+      marginTop={{ sm: '10px', md: '10px' }}
     >
       Full Version
     </CustomLink>
