@@ -11,7 +11,7 @@ const MainLayout = (): JSX.Element => (
         <Route path="/dashboard">
           <Dashboard />
         </Route>
-        <Route path="portfolio">
+        <Route path="/portfolio">
           <Portfolio />
         </Route>
         <Route render={() => <Redirect to="/dashboard" />} />

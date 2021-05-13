@@ -17,9 +17,9 @@ const Header = (): JSX.Element => {
           Simple Portfolio
         </Heading>
         <Flex as="nav" width="220px">
-          <ButtonNavigation to="dashboard">Dashboard</ButtonNavigation>
+          <ButtonNavigation to="/dashboard">Dashboard</ButtonNavigation>
           <Spacer />
-          <ButtonNavigation to="portfolio">Portfolio</ButtonNavigation>
+          <ButtonNavigation to="/portfolio">Portfolio</ButtonNavigation>
         </Flex>
       </Flex>
     </Flex>
