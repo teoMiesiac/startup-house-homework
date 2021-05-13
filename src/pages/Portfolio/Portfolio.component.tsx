@@ -1,3 +1,9 @@
-const Portfolio = (): JSX.Element => <>portfolio</>
+import { MyStocks } from 'components/MyStocks'
+
+const Portfolio = (): JSX.Element => (
+  <>
+    <MyStocks />
+  </>
+)
 
 export default Portfolio

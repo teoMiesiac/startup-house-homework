@@ -15,12 +15,12 @@ const examples = [
   },
   { id: 2, name: 'company 3', price: 8333 },
   { id: 3, name: 'company 4', price: 150 },
-  { id: 3, name: 'company 4', price: 150 },
-  { id: 3, name: 'company 4', price: 150 },
-  { id: 3, name: 'company 4', price: 150 },
-  { id: 3, name: 'company 4', price: 150 },
-  { id: 3, name: 'company 4', price: 150 },
-  { id: 3, name: 'company 4', price: 150 },
+  { id: 5, name: 'company 5', price: 150 },
+  { id: 6, name: 'company 6', price: 150 },
+  { id: 7, name: 'company 7', price: 150 },
+  { id: 8, name: 'company 8', price: 150 },
+  { id: 9, name: 'company 9', price: 150 },
+  { id: 10, name: 'company 10', price: 150 },
 ]
 
 const PortfolioPrices = (): JSX.Element => (
@@ -29,7 +29,6 @@ const PortfolioPrices = (): JSX.Element => (
       position="relative"
       px={{ sm: '15px', md: '30px' }}
       py={{ sm: '20px', md: '30px', lg: '50px' }}
-      my={{ sm: '20px', md: '50px', lg: '100px' }}
       maxWidth={1480}
       width="100%"
     >
@@ -41,7 +40,7 @@ const PortfolioPrices = (): JSX.Element => (
       <Text color="teal" marginTop="40px">
         Default tickers are displayed.If you want to see custom ones, please add stocks in your portfolio
       </Text>
-      <Divider colorScheme="teal" margin="40px 0px" />
+      <Divider colorScheme="teal" marginTop="40px" />
     </Box>
   </Section>
 )
