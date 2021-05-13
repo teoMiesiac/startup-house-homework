@@ -1,12 +1,12 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { all, call, put, takeLatest, AllEffect, ForkEffect } from 'redux-saga/effects'
+import { all, call, put, takeLatest } from 'redux-saga/effects'
 import { getNews } from 'api/marketaux/axios'
-import { newsFetchSuccess, newsFetchError } from './actions'
+import { newsFetch, newsFetchSuccess, newsFetchError } from './actions'
 import { NEWS_FETCH } from './constants'
 
-function* fetchNews() {
+function* fetchNews({ payload: { page } }: ReturnType<typeof newsFetch>) {
   try {
-    const { data } = yield call(getNews)
+    const { data } = yield call(getNews, { page })
     yield put(newsFetchSuccess(data))
   } catch (e) {
     yield put(newsFetchError)

@@ -1,40 +1,12 @@
-import { useEffect } from 'react'
-import { useDispatch } from 'react-redux'
 import { Flex, SimpleGrid } from '@chakra-ui/react'
+import { useSelector } from 'react-redux'
 import { Section } from 'components/Section'
 import { NewsArticle } from 'components/NewsArticle'
-import { newsFetch } from 'store/actions'
-
-const examples = [
-  {
-    id: 0,
-    header: 'Heading',
-    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-    img: 'https://i.pinimg.com/originals/07/59/c9/0759c9b979c04fc9b6952c5cfa85ec5f.jpg',
-    link: 'https://chakra-ui.com/',
-  },
-  {
-    id: 1,
-    header: 'Heading',
-    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-    img: 'https://i.pinimg.com/originals/07/59/c9/0759c9b979c04fc9b6952c5cfa85ec5f.jpg',
-    link: 'https://chakra-ui.com/',
-  },
-  {
-    id: 2,
-    header: 'Heading',
-    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-    img: 'https://i.pinimg.com/originals/07/59/c9/0759c9b979c04fc9b6952c5cfa85ec5f.jpg',
-    link: 'https://chakra-ui.com/',
-  },
-]
+import { Pagination } from 'components/Pagination'
+import { dataSelector } from 'store/news/selectors'
 
 const News = (): JSX.Element => {
-  const dispatch = useDispatch()
-
-  useEffect(() => {
-    dispatch(newsFetch())
-  }, [])
+  const data = useSelector(dataSelector)
 
   return (
     <Section>
@@ -49,16 +21,11 @@ const News = (): JSX.Element => {
         alignItems="center"
       >
         <SimpleGrid columns={1} spacing="10">
-          {examples.map((example) => (
-            <NewsArticle
-              key={example.id}
-              header={example.header}
-              text={example.text}
-              img={example.img}
-              link={example.link}
-            />
+          {data.map((data) => (
+            <NewsArticle key={data.uuid} header={data.title} text={data.snippet} img={data.image_url} link={data.url} />
           ))}
         </SimpleGrid>
+        <Pagination />
       </Flex>
     </Section>
   )

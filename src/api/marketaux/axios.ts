@@ -10,11 +10,15 @@ interface Meta {
   page: number
 }
 
-export interface getResponse {
+export interface GetResponse {
   meta: Meta
   data: News[]
 }
 
+export interface GetParams {
+  page: number
+}
+
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-export const getNews = async (): Promise<getResponse> =>
-  await instance.get('news/all', { params: { api_token, limit: 3 } })
+export const getNews = async ({ page }: GetParams): Promise<GetResponse> =>
+  await instance.get('news/all', { params: { api_token, limit: 3, page } })
