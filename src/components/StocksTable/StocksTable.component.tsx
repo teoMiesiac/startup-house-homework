@@ -6,7 +6,7 @@ interface Props {
 }
 
 const StocksTable = ({ stocks }: Props): JSX.Element => (
-  <Table variant="striped" colorScheme="teal" overflowX="scroll" marginTop="20px">
+  <Table variant="striped" colorScheme="teal" overflowX="hidden" marginTop="40px" size="sm">
     <Thead>
       <Tr>
         <Th>Stock Name</Th>

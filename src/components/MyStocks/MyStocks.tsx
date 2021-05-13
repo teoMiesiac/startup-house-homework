@@ -1,5 +1,5 @@
 import { FormEvent, useState, useEffect } from 'react'
-import { Flex, Button } from '@chakra-ui/react'
+import { Flex, Box, Button } from '@chakra-ui/react'
 import { SearchBox } from 'components/SearchBox'
 import { Section } from 'components/Section'
 import { StocksTable } from 'components/StocksTable'
@@ -78,7 +78,10 @@ const MyStocks = (): JSX.Element => {
             Add to Stock Portfolio
           </Button>
         </Flex>
-        <StocksTable stocks={stocks}></StocksTable>
+
+        <Box overflowX="scroll" width="100%" maxWidth="100%">
+          <StocksTable stocks={stocks}></StocksTable>
+        </Box>
       </Flex>
     </Section>
   )
